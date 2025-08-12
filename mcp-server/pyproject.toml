@@ -1,0 +1,17 @@
+[project]
+name = "mcp-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "coloredlogs>=15.0.1",
+    "envyaml>=1.10.211231",
+    "fastmcp>=2.11.3",
+    "pyhumps>=3.8.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.8",
+]

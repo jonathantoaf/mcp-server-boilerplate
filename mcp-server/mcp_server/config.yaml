@@ -1,0 +1,25 @@
+logging:
+  version: 1
+  disable_existing_loggers: False
+
+  formatters:
+    formatter:
+      "()": coloredlogs.ColoredFormatter
+      format: "[%(asctime)s] [%(name)s] [%(levelname)s] [%(threadName)s] [%(thread)d] %(message)s"
+
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: DEBUG
+      formatter: formatter
+      stream: ext://sys.stdout
+
+  root:
+    level: DEBUG
+    handlers: [console]
+
+server:
+  host: $HOST|"0.0.0.0"
+  port: $PORT|"5000"
+  transport: $TRANSPORT|"streamable-http"
+  external_api_url: $EXTERNAL_API_URL|"http://localhost:8000"
