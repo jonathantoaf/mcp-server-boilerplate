@@ -3,4 +3,4 @@ import logging.config
 from mcp_server.utils.config import config
 
 logging.config.dictConfig(config["logging"])
-logger = logging.getLogger("cyrano-api-mcp-server")
+logger = logging.getLogger("mcp-server")

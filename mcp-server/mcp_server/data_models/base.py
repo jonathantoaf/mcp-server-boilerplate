@@ -1,5 +1,4 @@
 from datetime import datetime, timezone
-
 from humps.main import camelize
 from pydantic import BaseModel
 
