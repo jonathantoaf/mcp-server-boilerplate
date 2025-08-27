@@ -30,8 +30,6 @@ class MCPServer:
         self.mcp = FastMCP(
             name=config.name,
             instructions=config.instructions,
-            host=config.host,
-            port=config.port,
         )
 
         logger.info(f"FastMCP server created on {config.host}:{config.port}")
@@ -47,6 +45,7 @@ class MCPServer:
             description="Given an unsorted array of integers, returns the sorted array.",
         )
         def example_tool(request: ExampleToolRequest) -> ExampleToolResponse:
+            logger.info(f"Get request for example_tool: {request}")
             sorted_array = sorted(request.array)
             logger.info(f"Sorted array: {request.array} -> {sorted_array}")
             return ExampleToolResponse(sorted_array=sorted_array)

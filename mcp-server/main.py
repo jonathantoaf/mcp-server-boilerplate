@@ -7,4 +7,9 @@ mcp = server.mcp
 
 if __name__ == "__main__":
     # Start the MCP server
-    mcp.run(transport=server_config.transport, path="/mcp")
+    mcp.run(
+        transport=server_config.transport, 
+        path="/mcp",
+        host=server_config.host,
+        port=server_config.port
+    )
