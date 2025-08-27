@@ -165,6 +165,10 @@ uv run ruff check
 uv run ruff check --fix
 ```
 
+### Inspector
+
+This project includes an Inspector tool for debugging and introspection. For more details, see the [Inspector documentation](./INSPECTOR.md).
+
 
 ## Example Tools
 
