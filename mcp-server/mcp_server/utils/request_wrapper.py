@@ -8,12 +8,12 @@ def wrap_request_with_error_handling(
 ) -> Callable[..., Any]:
     """
     A decorator for MCP tool functions that provides consistent error handling and logging.
-    
+
     This decorator:
     - Catches and logs exceptions
     - Returns a standardized error response
     - Preserves function metadata
-    
+
     Usage:
         @wrap_request_with_error_handling
         def my_tool(request: MyRequest) -> MyResponse:
@@ -28,14 +28,8 @@ def wrap_request_with_error_handling(
             logger.debug(f"Successfully executed {request_func.__name__}")
             return result
         except Exception as e:
-            logger.error(
-                f"Error in {request_func.__name__}: {e}", exc_info=True
-            )
+            logger.error(f"Error in {request_func.__name__}: {e}", exc_info=True)
             # Return a standardized error response
-            return {
-                "status": "error", 
-                "message": str(e),
-                "tool": request_func.__name__
-            }
+            return {"status": "error", "message": str(e), "tool": request_func.__name__}
 
     return wrapper
